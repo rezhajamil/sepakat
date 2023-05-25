@@ -834,6 +834,15 @@ select {
 .w-screen {
   width: 100vw;
 }
+.w-5\/6 {
+  width: 83.333333%;
+}
+.w-11\/12 {
+  width: 91.666667%;
+}
+.w-10\/12 {
+  width: 83.333333%;
+}
 .max-w-6xl {
   max-width: 72rem;
 }

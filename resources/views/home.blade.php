@@ -125,22 +125,22 @@
         <section id="event" class="w-full px-3 mt-12">
             <span class="block text-xl text-white underline sm:text-2xl md:text-4xl font-batik">Event Terdekat</span>
             <div class="flex flex-col gap-4 mt-3">
-                <div
+                <a href=""
                     class="flex justify-between  p-3 font-semibold text-white transition-all rounded-md hover:shadow-lg hover:to-orange-600 duration-1000 ease-in-out hover:from-40% bg-gradient-to-r from-premier to-premier/70">
-                    <div class="grid grid-cols-2">
-                        <span class="">23 Maret 2023 - 24 April 2023</span>
+                    <div class="flex flex-col gap-y-1">
+                        <span class="text-xs italic">23 Maret 2023 - 24 April 2023</span>
                         <span class="text-left truncate">Kunjungan Ke DPW Sepakat DKI Jakarta</span>
                     </div>
                     <i class="my-auto text-right align-middle fa-solid fa-angle-right"></i>
-                </div>
-                <div
+                </a>
+                <a href=""
                     class="flex justify-between  p-3 font-semibold text-white transition-all rounded-md hover:shadow-lg hover:to-orange-600 duration-1000 ease-in-out hover:from-40% bg-gradient-to-r from-premier to-premier/70">
-                    <div class="grid grid-cols-2">
-                        <span class="">23 Maret 2023 - 24 April 2023</span>
+                    <div class="flex flex-col gap-y-1">
+                        <span class="text-xs italic">23 Maret 2023 - 24 April 2023</span>
                         <span class="text-left truncate">Kunjungan Ke DPW Sepakat DKI Jakarta</span>
                     </div>
                     <i class="my-auto text-right align-middle fa-solid fa-angle-right"></i>
-                </div>
+                </a>
             </div>
         </section>
     </main>

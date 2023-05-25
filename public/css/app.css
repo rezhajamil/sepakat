@@ -930,6 +930,9 @@ select {
   -moz-column-gap: 1rem;
        column-gap: 1rem;
 }
+.gap-y-1 {
+  row-gap: 0.25rem;
+}
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(2rem * var(--tw-space-x-reverse));
@@ -1229,6 +1232,9 @@ select {
 }
 .uppercase {
   text-transform: uppercase;
+}
+.italic {
+  font-style: italic;
 }
 .leading-5 {
   line-height: 1.25rem;

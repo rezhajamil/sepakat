@@ -24,7 +24,7 @@
                 class="w-full px-2 py-1 mt-6 overflow-x-hidden overflow-y-hidden border-white h-[420px] sm:h-[400px] border-x-2">
                 <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
                     <div id="slider"
-                        class="flex items-center justify-start h-full transition duration-700 ease-out lg:gap-8 md:gap-6 gap-14">
+                        class="flex items-center justify-start h-full overflow-x-auto transition duration-700 ease-out sm:overflow-x-visible lg:gap-8 md:gap-6 gap-14">
                         <div aria-label="cards"
                             class="flex-shrink-0 w-full overflow-hidden bg-white rounded shadow sm:w-2/3 lg:w-1/2">
                             <div class="relative w-full">
@@ -97,7 +97,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center w-full gap-x-4">
+            <div class="justify-center hidden w-full sm:flex gap-x-4">
                 <button aria-label="slide backward"
                     class="cursor-pointer focus:outline-none bg-gradient-to-b from-premier from-20% shadow-md hover:shadow-xl transition-all px-3 py-2 rounded-md to-orange-600"
                     id="prev">
@@ -116,6 +116,10 @@
                             stroke-linejoin="round" />
                     </svg>
                 </button>
+            </div>
+            <div class="flex flex-col mx-auto text-center text-white sm:hidden">
+                <i class="text-4xl fa-solid fa-left-right"></i>
+                <span class="text-lg font-semibold">Swipe</span>
             </div>
         </section>
         <section id="event" class="w-full px-3 mt-12">

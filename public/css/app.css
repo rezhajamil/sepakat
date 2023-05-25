@@ -943,6 +943,9 @@ select {
 .overflow-hidden {
   overflow: hidden;
 }
+.overflow-x-auto {
+  overflow-x: auto;
+}
 .overflow-x-hidden {
   overflow-x: hidden;
 }
@@ -1670,6 +1673,10 @@ select {
   .sm\:gap-x-6 {
     -moz-column-gap: 1.5rem;
          column-gap: 1.5rem;
+  }
+
+  .sm\:overflow-x-visible {
+    overflow-x: visible;
   }
 
   .sm\:rounded-lg {

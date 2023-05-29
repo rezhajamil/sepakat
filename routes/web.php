@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,8 +18,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('dashboard', function () {
+        return redirect()->route('admin.dashboard');
+    })->name('dashboard');
+    Route::prefix('admin')->name('admin.')->middleware('ensureRole:admin')->group(function () {
+        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('news', AdminNewsController::class);
+    });
+});
+
+// Route::get('/dashboard', [])->middleware(['auth'])->name('dashboard');
 
 require __DIR__ . '/auth.php';

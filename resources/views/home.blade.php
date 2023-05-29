@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('body')
-    <main class="w-screen h-full min-h-screen bg-gradient-to-b from-premier from-75% to-orange-600 py-6 px-4 pb-24">
+    <main class="h-full min-h-screen bg-gradient-to-b from-premier from-75% to-orange-600 py-6 px-4 pb-24">
         <span class="inline-block w-full text-4xl text-center text-white sm:text-5xl md:text-7xl font-batik">
             SEPAKAT NEWS
         </span>
@@ -19,7 +19,8 @@
             </div>
         </div>
         <section id="activity" class="w-full px-3 mt-12">
-            <span class="block text-xl text-white underline sm:text-2xl md:text-4xl font-batik">Aktivitas Terbaru</span>
+            <a href="" class="block text-xl text-white underline sm:text-2xl md:text-4xl font-batik">Aktivitas
+                Terbaru <i class="ml-2 text-xs sm:text-sm fa-solid fa-up-right-from-square"></i></a>
             <div
                 class="w-full px-2 py-1 mt-6 overflow-x-hidden overflow-y-hidden border-white h-[420px] sm:h-[400px] border-x-2">
                 <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
@@ -123,7 +124,8 @@
             </div>
         </section>
         <section id="event" class="w-full px-3 mt-12">
-            <span class="block text-xl text-white underline sm:text-2xl md:text-4xl font-batik">Event Terdekat</span>
+            <a href="" class="block text-xl text-white underline sm:text-2xl md:text-4xl font-batik">Event
+                Terdekat<i class="ml-2 text-xs sm:text-sm fa-solid fa-up-right-from-square"></i></a>
             <div class="flex flex-col gap-4 mt-3">
                 <a href=""
                     class="flex justify-between items-center p-3 font-semibold text-white transition-all rounded-md hover:shadow-lg hover:to-orange-600 duration-1000 ease-in-out hover:from-40% bg-gradient-to-r from-premier to-premier/70">

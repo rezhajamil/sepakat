@@ -26,75 +26,29 @@
                 <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
                     <div id="slider"
                         class="flex items-center justify-start h-full overflow-x-auto transition duration-700 ease-out sm:overflow-x-visible lg:gap-8 md:gap-6 gap-14">
-                        <div aria-label="cards"
-                            class="flex-shrink-0 w-full overflow-hidden bg-white rounded shadow sm:w-2/3 lg:w-1/2">
-                            <div class="relative w-full">
-                                <img tabindex="0"
-                                    class="object-cover object-center w-full h-48 rounded-t shadow focus:outline-none"
-                                    src="https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_29.png"
-                                    alt="mountains cover" />
-                            </div>
-                            <div class="w-full px-5 pt-2 pb-6 xl:px-7">
-                                <div class="w-full ">
-                                    <h2 class="mb-3 text-2xl font-medium tracking-normal xl:mb-0 xl:mr-4">
-                                        Marshall Mathers</h2>
-                                    <p tabindex="0"
-                                        class="mt-2 mb-4 text-sm leading-5 tracking-normal text-gray-600 focus:outline-none xl:text-left">
-                                        HI, I am a direct response copywriter from the US. When you work with me, we
-                                        have the same goal. Maximizing your ROI
-                                    </p>
-                                    <a href=""
-                                        class="inline-block mt-auto mb-2 font-semibold underline cursor-pointer text-slate-500">Baca
-                                        Selengkapnya <i class="ml-2 fa-solid fa-up-right-from-square"></i></a>
+                        @foreach ($news as $key => $news)
+                            <div aria-label="cards"
+                                class="flex-shrink-0 w-full overflow-hidden bg-white rounded shadow sm:w-2/3 lg:w-1/2">
+                                <div class="relative w-full">
+                                    <img tabindex="0"
+                                        class="object-cover object-center w-full h-48 rounded-t shadow focus:outline-none"
+                                        src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->slug }}" />
+                                </div>
+                                <div class="w-full px-5 pt-2 pb-6 xl:px-7">
+                                    <div class="w-full ">
+                                        <h2 class="mb-3 text-xl font-bold tracking-normal text-orange-900 xl:mb-0 xl:mr-4">
+                                            {{ $news->title }}</h2>
+                                        <p tabindex="0"
+                                            class="mt-2 mb-4 text-sm leading-5 tracking-normal text-gray-600 focus:outline-none xl:text-left">
+                                            {{ $news->headline }}
+                                        </p>
+                                        <a href="{{ route('news.show', $news->slug) }}"
+                                            class="inline-block mt-auto mb-2 font-semibold underline cursor-pointer text-slate-500">Baca
+                                            Selengkapnya <i class="ml-2 fa-solid fa-up-right-from-square"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div aria-label="cards"
-                            class="flex-shrink-0 w-full overflow-hidden bg-white rounded shadow sm:w-2/3 lg:w-1/2">
-                            <div class="relative w-full">
-                                <img tabindex="0"
-                                    class="object-cover object-center w-full h-48 rounded-t shadow focus:outline-none"
-                                    src="https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_29.png"
-                                    alt="mountains cover" />
-                            </div>
-                            <div class="w-full px-5 pt-2 pb-6 xl:px-7">
-                                <div class="w-full ">
-                                    <h2 class="mb-3 text-2xl font-medium tracking-normal xl:mb-0 xl:mr-4">
-                                        Marshall Mathers</h2>
-                                    <p tabindex="0"
-                                        class="mt-2 mb-4 text-sm leading-5 tracking-normal text-gray-600 focus:outline-none xl:text-left">
-                                        HI, I am a direct response copywriter from the US. When you work with me, we
-                                        have the same goal. Maximizing your ROI
-                                    </p>
-                                    <a href=""
-                                        class="inline-block mt-auto mb-2 font-semibold underline cursor-pointer text-slate-500">Baca
-                                        Selengkapnya <i class="ml-2 fa-solid fa-up-right-from-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div aria-label="cards"
-                            class="flex-shrink-0 w-full overflow-hidden bg-white rounded shadow sm:w-2/3 lg:w-1/2">
-                            <div class="relative w-full">
-                                <img tabindex="0"
-                                    class="object-cover object-center w-full h-48 rounded-t shadow focus:outline-none"
-                                    src="https://tuk-cdn.s3.amazonaws.com/assets/components/grid_cards/gc_29.png"
-                                    alt="mountains cover" />
-                            </div>
-                            <div class="w-full px-5 pt-2 pb-6 xl:px-7">
-                                <div class="w-full ">
-                                    <h2 class="mb-3 text-2xl font-medium tracking-normal xl:mb-0 xl:mr-4">
-                                        Marshall Mathers</h2>
-                                    <p tabindex="0"
-                                        class="mt-2 mb-4 text-sm leading-5 tracking-normal text-gray-600 focus:outline-none xl:text-left">
-                                        HI, I am a direct response copywriter from the US. When you work with me, we
-                                        have the same goal. Maximizing your ROI
-                                    </p>
-                                    <a href=""
-                                        class="inline-block mt-auto mb-2 font-semibold underline cursor-pointer text-slate-500">Baca
-                                        Selengkapnya <i class="ml-2 fa-solid fa-up-right-from-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -127,22 +81,18 @@
             <a href="" class="block text-xl text-white underline sm:text-2xl md:text-4xl font-batik">Event
                 Terdekat<i class="ml-2 text-xs sm:text-sm fa-solid fa-up-right-from-square"></i></a>
             <div class="flex flex-col gap-4 mt-3">
-                <a href=""
-                    class="flex justify-between items-center p-3 font-semibold text-white transition-all rounded-md hover:shadow-lg hover:to-orange-600 duration-1000 ease-in-out hover:from-40% bg-gradient-to-r from-premier to-premier/70">
-                    <div class="flex flex-col w-10/12 gap-y-1">
-                        <span class="text-xs italic">23 Maret 2023 - 24 April 2023</span>
-                        <span class="text-left truncate">Kunjungan Ke DPW Sepakat DKI Jakarta</span>
-                    </div>
-                    <i class="px-2 my-auto text-right align-middle fa-solid fa-angle-right"></i>
-                </a>
-                <a href=""
-                    class="flex justify-between items-center p-3 font-semibold text-white transition-all rounded-md hover:shadow-lg hover:to-orange-600 duration-1000 ease-in-out hover:from-40% bg-gradient-to-r from-premier to-premier/70">
-                    <div class="flex flex-col w-10/12 gap-y-1">
-                        <span class="text-xs italic">23 Maret 2023 - 24 April 2023</span>
-                        <span class="text-left truncate">Kunjungan Ke DPW Sepakat DKI Jakarta Bersama Direktur</span>
-                    </div>
-                    <i class="px-2 my-auto text-right align-middle fa-solid fa-angle-right"></i>
-                </a>
+                @forelse ($events as $event)
+                    <a href="{{ route('event.show', $event->id) }}"
+                        class="flex justify-between items-center p-3 font-semibold text-white transition-all rounded-md hover:shadow-lg hover:to-orange-600 duration-1000 ease-in-out hover:from-40% bg-gradient-to-r from-premier to-premier/70">
+                        <div class="flex flex-col w-10/12 gap-y-1">
+                            <span class="text-xs italic">{{ date('d M Y', strtotime($event->date)) }}</span>
+                            <span class="text-left truncate">{{ $event->title }}</span>
+                        </div>
+                        <i class="px-2 my-auto text-right align-middle fa-solid fa-angle-right"></i>
+                    </a>
+                @empty
+                    <span class="text-lg text-white">Tidak Ada Event Terbaru</span>
+                @endforelse
             </div>
         </section>
     </main>

@@ -3,7 +3,7 @@
     <div class="w-full max-w-full px-3 mx-auto shrink-0 md:w-11/12 md:flex-0">
         <div
             class="relative flex flex-col w-full min-w-0 px-12 py-4 break-words bg-white border-0 shadow-xl rounded-2xl bg-clip-border">
-            <div class="w-9/12 mx-auto overflow-hidden rounded h-96">
+            <div class="w-10/12 mx-auto overflow-hidden rounded h-96">
                 <img src="{{ asset('storage/' . $news->image) }}" alt="{{ $news->name }}"
                     class="object-cover object-center w-full">
             </div>

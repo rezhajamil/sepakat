@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Event;
+use App\Models\News;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
-class EventController extends Controller
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $events = Event::orderBy('created_at', 'desc')->orderBy('title')->get();
-
-        return view('admin.event.index', compact('events'));
+        //
     }
 
     /**
@@ -28,7 +24,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('admin.event.create');
+        //
     }
 
     /**
@@ -39,38 +35,20 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => ['required'],
-            'date' => ['required'],
-            'image' => ['required', 'image'],
-            'caption' => ['required'],
-        ]);
-
-        if ($request->hasFile('image')) {
-            $image = $request->image->store('event');
-
-            Event::create([
-                'author_id' => auth()->user()->id,
-                'title' => ucwords($request->title),
-                'slug' => Str::slug($request->title),
-                'caption' => $request->caption,
-                'date' => $request->date,
-                'image' => $image,
-            ]);
-        }
-
-        return redirect()->route('admin.event.index')->with('success', 'Berhasil Menambahkan Event');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $news = News::where('slug', $slug)->first();
+
+        return view('news.show', compact('news'));
     }
 
     /**

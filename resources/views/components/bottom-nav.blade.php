@@ -12,7 +12,7 @@
             <span>Survey</span>
         </a>
         @auth
-            <a href="{{ route('home') }}"
+            <a href="{{ route('profile') }}"
                 class="flex flex-col items-center w-full p-2 text-xs font-semibold text-orange-600 transition-all ease-in-out rounded sm:text-base hover:bg-orange-600 hover:text-white">
                 <i class="fa-solid fa-user"></i>
                 <span>Profile</span>

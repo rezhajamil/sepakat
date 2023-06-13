@@ -107,7 +107,7 @@
                     <i class="text-6xl text-center text-green-800 fa-solid fa-circle-check"></i>
                 </div>
             @else
-                <span class="block w-full py-2 mb-2 text-2xl font-bold text-center text-premier">Tidak Ada Survey
+                <span class="block w-full py-2 text-2xl font-bold text-center text-premier">Tidak Ada Survey
                     Aktif</span>
             @endif
         </div>

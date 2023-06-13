@@ -65,6 +65,7 @@
     <script src="{{ asset('js/jspdf.autotable.js') }}"></script> --}}
     {{-- <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.es.min.js"></script>
     <script src="https://unpkg.com/jspdf-autotable@3.5.25/dist/jspdf.plugin.autotable.js"></script> --}}
+    @include('components.bottom-nav')
     <script type="text/javascript"
         src="https://github.com/niklasvh/html2canvas/releases/download/0.5.0-alpha1/html2canvas.js"></script>
     @yield('script')

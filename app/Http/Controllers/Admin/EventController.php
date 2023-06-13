@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class EventController extends Controller
@@ -70,7 +71,9 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        //
+        $event = Event::with(['author'])->find($id);
+
+        return view('admin.event.show', compact('event'));
     }
 
     /**
@@ -81,7 +84,9 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        //
+        $event = Event::find($id);
+
+        return view('admin.event.edit', compact('event'));
     }
 
     /**
@@ -93,7 +98,32 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => ['required'],
+            'date' => ['required'],
+            'image' => ['nullable', 'image'],
+            'caption' => ['required'],
+        ]);
+
+        $event = Event::find($id);
+
+        if ($request->image && $request->hasFile('image')) {
+            $image = $request->image->store('event');
+            Storage::delete($event->image);
+
+            $event->title = ucwords($request->title);
+            $event->slug = Str::slug($request->title);
+            $event->caption = $request->caption;
+            $event->image = $image;
+            $event->save();
+        } else {
+            $event->title = ucwords($request->title);
+            $event->slug = Str::slug($request->title);
+            $event->caption = $request->caption;
+            $event->save();
+        }
+
+        return redirect()->route('admin.event.index')->with('success', 'Berhasil Mengedit Event');
     }
 
     /**

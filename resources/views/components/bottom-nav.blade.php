@@ -17,7 +17,7 @@
                 <i class="fa-solid fa-user"></i>
                 <span>Profile</span>
             </a>
-            <a href="{{ route('home') }}"
+            <a href="{{ route('logout') }}"
                 class="flex flex-col items-center w-full p-2 text-xs font-semibold text-orange-600 transition-all ease-in-out rounded whitespace-nowrap sm:text-base hover:bg-orange-600 hover:text-white">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span>Sign Out</span>

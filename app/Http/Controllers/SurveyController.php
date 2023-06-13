@@ -18,21 +18,24 @@ class SurveyController extends Controller
         $plain = true;
 
         $survey = DB::table('survey_sessions')->where('status', 1)->first();
-        $survey->soal = json_decode($survey->soal);
-        $survey->jenis_soal = json_decode($survey->jenis_soal);
-        $survey->opsi = json_decode($survey->opsi);
-        $survey->jumlah_opsi = json_decode($survey->jumlah_opsi);
-        $survey->validasi = json_decode($survey->validasi);
 
         if ($survey) {
             $answer = DB::table('survey_answers')->where('session', $survey->id)->where('user', auth()->user()->id)->first();
             $history = DB::table('survey_answers')->where('user', auth()->user()->id)->get();
+
+            $survey->soal = json_decode($survey->soal);
+            $survey->jenis_soal = json_decode($survey->jenis_soal);
+            $survey->opsi = json_decode($survey->opsi);
+            $survey->jumlah_opsi = json_decode($survey->jumlah_opsi);
+            $survey->validasi = json_decode($survey->validasi);
+            $title = $survey->nama;
         } else {
+            $survey = [];
             $answer = [];
             $history = [];
+            $title = '';
         }
 
-        $title = $survey->nama;
 
         return view('survey.index', compact('survey', 'answer', 'plain', 'title'));
     }

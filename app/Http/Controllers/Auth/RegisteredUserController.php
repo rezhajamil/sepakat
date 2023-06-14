@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
         $request->validate([
             'nik' => ['required', 'numeric', 'unique:users'],
             'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'numeric', 'unique:users', TelkomselNumber::class],
+            'phone' => ['required', 'numeric', 'unique:users', new TelkomselNumber],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);

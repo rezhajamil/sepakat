@@ -15,10 +15,10 @@
                 <div class="flex justify-between my-6 ml-0 lg:ml-20 lg:my-0 gap-x-6">
                     {{-- <h4 class="mb-2 text-2xl font-bold leading-tight text-white">Profile</h4> --}}
                     <a href="{{ route('user.edit', $user->id) }}"
-                        class="px-8 py-2 text-sm font-semibold text-white transition duration-150 ease-in-out bg-orange-600 border rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-700 hover:bg-slate-400">Edit
+                        class="px-8 py-2 text-sm font-semibold text-white transition duration-150 ease-in-out bg-orange-600 border rounded whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-700 hover:bg-slate-400">Edit
                         Profile</a>
                     <a href="{{ route('user.edit_password', $user->id) }}"
-                        class="px-8 py-2 text-sm font-semibold text-white transition duration-150 ease-in-out border rounded bg-slate-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-400 hover:bg-orange-600">Ganti
+                        class="px-8 py-2 text-sm font-semibold text-white transition duration-150 ease-in-out border rounded whitespace-nowrap bg-slate-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-400 hover:bg-orange-600">Ganti
                         Password</a>
                 </div>
             </div>

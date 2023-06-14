@@ -25,7 +25,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string'],
-            'phone' => ['required', 'numeric', Rule::unique('users', 'phone')->ignore($user->id), TelkomselNumber::class],
+            'phone' => ['required', 'numeric', Rule::unique('users', 'phone')->ignore($user->id), new TelkomselNumber],
         ]);
 
 

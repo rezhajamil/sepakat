@@ -29,7 +29,10 @@ Route::middleware(['auth'])->group(function () {
         return redirect()->route('admin.dashboard');
     })->name('dashboard');
 
+    Route::resource('user', UserController::class);
     Route::get('profile', [UserController::class, 'profile'])->name('profile');
+    Route::get('edit_password/{user}', [UserController::class, 'edit_password'])->name('user.edit_password');
+    Route::put('update_password/{user}', [UserController::class, 'update_password'])->name('user.update_password');
 
     Route::prefix('news')->name('news.')->group(function () {
         Route::get('/{slug}', [NewsController::class, 'show'])->name('show');

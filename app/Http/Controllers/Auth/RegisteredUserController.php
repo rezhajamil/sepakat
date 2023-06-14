@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use App\Rules\TelkomselNumber;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -34,21 +35,26 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'nik' => ['required', 'numeric', 'unique:users'],
             'name' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'numeric', 'unique:users', TelkomselNumber::class],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'nik' => $request->nik,
+            'name' => ucwords($request->name),
+            'phone' => $request->phone,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 'member',
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/');
     }
 }

@@ -84,7 +84,7 @@
                 Terdekat<i class="ml-2 text-xs sm:text-sm fa-solid fa-up-right-from-square"></i></a>
             <div class="flex flex-col gap-4 mt-3">
                 @forelse ($events as $event)
-                    <a href="{{ route('event.show', $event->id) }}"
+                    <a href="{{ route('event.show', $event->slug) }}"
                         class="flex justify-between items-center p-3 font-semibold text-white transition-all rounded-md hover:shadow-lg hover:to-orange-600 duration-1000 ease-in-out hover:from-40% bg-gradient-to-r from-premier to-premier/70">
                         <div class="flex flex-col w-10/12 gap-y-1">
                             <span class="text-xs italic">{{ date('d M Y', strtotime($event->date)) }}</span>

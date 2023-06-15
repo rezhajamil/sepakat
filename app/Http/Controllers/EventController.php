@@ -49,7 +49,7 @@ class EventController extends Controller
     public function show($slug)
     {
         $event = Event::where('slug', $slug)->first();
-
+        // ddd($event);
         return view('event.show', compact('event'));
     }
 

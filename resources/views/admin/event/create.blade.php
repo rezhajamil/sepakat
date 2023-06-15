@@ -39,6 +39,17 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="w-full max-w-full px-3 shrink-0 md:w-12/12 md:flex-0">
+                        <div class="mb-4">
+                            <label for="location" class="inline-block mb-2 ml-1 text-xs font-bold text-slate-700 ">Lokasi
+                                Event</label>
+                            <input type="text" name="location" value="{{ old('location') }}"
+                                class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-orange-500 focus:outline-none" />
+                            @error('location')
+                                <span class="text-sm italic font-light text-red-600">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
                     <div class="w-full max-w-full px-3 shrink-0 md:flex-0">
                         <div class="mb-4">
                             <label for="image"

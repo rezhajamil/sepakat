@@ -45,6 +45,7 @@ class EventController extends Controller
             'date' => ['required'],
             'image' => ['required', 'image'],
             'caption' => ['required'],
+            'location' => ['nullable', 'string'],
         ]);
 
         if ($request->hasFile('image')) {
@@ -55,6 +56,7 @@ class EventController extends Controller
                 'title' => ucwords($request->title),
                 'slug' => Str::slug($request->title),
                 'caption' => $request->caption,
+                'location' => ucwords($request->location),
                 'date' => $request->date,
                 'image' => $image,
             ]);
@@ -103,6 +105,7 @@ class EventController extends Controller
             'date' => ['required'],
             'image' => ['nullable', 'image'],
             'caption' => ['required'],
+            'location' => ['nullable', 'string'],
         ]);
 
         $event = Event::find($id);
@@ -114,12 +117,14 @@ class EventController extends Controller
             $event->title = ucwords($request->title);
             $event->slug = Str::slug($request->title);
             $event->caption = $request->caption;
+            $event->location = ucwords($request->location);
             $event->image = $image;
             $event->save();
         } else {
             $event->title = ucwords($request->title);
             $event->slug = Str::slug($request->title);
             $event->caption = $request->caption;
+            $event->location = ucwords($request->location);
             $event->save();
         }
 

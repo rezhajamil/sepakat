@@ -17,10 +17,10 @@
                 <i class="fa-solid fa-location-dot"></i>
                 <span class="">{{ $event->location ?? '-' }}</span>
             </div>
-            <div class="flex items-center text-sm font-semibold text-white gap-x-2">
+            {{-- <div class="flex items-center text-sm font-semibold text-white gap-x-2">
                 <i class="fa-solid fa-pencil"></i>
                 <span class="">{{ $event->author->name }}</span>
-            </div>
+            </div> --}}
         </div>
         <div class="flex justify-between w-full py-2 mx-auto text-white sm:w-10/12">
             {!! $event->caption !!}

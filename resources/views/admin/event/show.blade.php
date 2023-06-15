@@ -14,6 +14,9 @@
                             class="mr-2 fa-solid fa-calendar-day"></i>{{ $event->date }}
                     </span>
                     <span class="block text-sm text-right text-gray-500 font-base"><i
+                            class="mr-2 fa-solid fa-location-dot"></i>{{ $event->location }}
+                    </span>
+                    <span class="block text-sm text-right text-gray-500 font-base"><i
                             class="mr-2 fa-solid fa-pencil"></i>{{ $event->author->name }}
                     </span>
                 </div>

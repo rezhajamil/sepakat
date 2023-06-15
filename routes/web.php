@@ -36,10 +36,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('news')->name('news.')->group(function () {
         Route::get('/{slug}', [NewsController::class, 'show'])->name('show');
+        Route::get('/', [NewsController::class, 'index'])->name('index');
     });
 
     Route::prefix('event')->name('event.')->group(function () {
         Route::get('/{slug}', [EventController::class, 'show'])->name('show');
+        Route::get('/', [EventController::class, 'index'])->name('index');
     });
 
     Route::resource('survey', SurveyController::class);
@@ -51,8 +53,8 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('survey', AdminSurveyController::class);
 
         Route::put('change_status/{survey}', [AdminSurveyController::class, 'change_status'])->name('survey.change_status');
-        Route::get('/resume/survey/{id}', [AdminSurveyController::class, 'resume'])->name('survey.resume');
-        Route::get('/result/survey/{id}', [AdminSurveyController::class, 'result'])->name('survey.result');
+        Route::get('/survey/resume/{id}', [AdminSurveyController::class, 'resume'])->name('survey.resume');
+        Route::get('/survey/result/{id}', [AdminSurveyController::class, 'result'])->name('survey.result');
     });
 });
 

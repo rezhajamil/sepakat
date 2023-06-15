@@ -19,7 +19,8 @@
             </div>
         </div>
         <section id="activity" class="w-full px-3 mt-12">
-            <a href="" class="block text-xl text-white underline sm:text-2xl md:text-4xl font-batik">Aktivitas
+            <a href="{{ route('news.index') }}"
+                class="block text-xl text-white underline sm:text-2xl md:text-4xl font-batik">Aktivitas
                 Terbaru <i class="ml-2 text-xs sm:text-sm fa-solid fa-up-right-from-square"></i></a>
             <div
                 class="w-full px-2 py-1 mt-6 overflow-x-hidden overflow-y-hidden border-white h-[420px] sm:h-[400px] border-x-2">
@@ -78,7 +79,8 @@
             </div>
         </section>
         <section id="event" class="w-full px-3 mt-12">
-            <a href="" class="block text-xl text-white underline sm:text-2xl md:text-4xl font-batik">Event
+            <a href="{{ route('event.index') }}"
+                class="block text-xl text-white underline sm:text-2xl md:text-4xl font-batik">Event
                 Terdekat<i class="ml-2 text-xs sm:text-sm fa-solid fa-up-right-from-square"></i></a>
             <div class="flex flex-col gap-4 mt-3">
                 @forelse ($events as $event)

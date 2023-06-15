@@ -5,11 +5,11 @@
             <div class="mt-4 overflow-y-auto">
                 <div class="flex justify-between w-fit">
                     <a href="{{ route('admin.survey.index') }}"
-                        class="block px-4 py-2 my-2 font-bold text-white rounded-md  w-fit hover:underline"><i
+                        class="block px-4 py-2 my-2 font-bold text-white rounded-md w-fit hover:underline"><i
                             class="mr-2 fa-solid fa-arrow-left"></i> Kembali
                     </a>
                     <a href="{{ route('admin.survey.result', $survey->id) }}"
-                        class="block px-4 py-2 my-2 font-bold text-white rounded-md  w-fit hover:underline"><i
+                        class="block px-4 py-2 my-2 font-bold text-white rounded-md w-fit hover:underline"><i
                             class="mr-2 fa-solid fa-clipboard-list"></i> List Jawaban
                     </a>
                 </div>
@@ -196,7 +196,7 @@
                     }
 
                     html += ` ${i_soal>0?'<tr>':''}
-                        <td rowspan="${survey.jenis_soal[i_soal] != 'Prioritas'?parseInt(survey.jumlah_opsi[i_soal]):parseInt(survey.jumlah_opsi[i_soal])*pr}" class="p-4 text-gray-700 text-xl border border-b-${i_soal>0?4:2}">${soal}</td>
+                        <td rowspan="${survey.jenis_soal[i_soal] != 'Prioritas'?parseInt(survey.jumlah_opsi[i_soal]):parseInt(survey.jumlah_opsi[i_soal])*pr}" class="p-4 text-gray-700 border border-b-${i_soal>0?4:2}">${soal}</td>
                         `;
 
                     answer.map((d_answer, i_answer) => {

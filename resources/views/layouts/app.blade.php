@@ -8,10 +8,10 @@
     <meta name="referrer" content="always">
     {{-- <link rel="canonical" href="{{ $page->getUrl() }}"> --}}
 
-    <meta name="description" content="SEPAKAT TELKOMSEL SUMUT">
+    <meta name="description" content="SEPAKAT TELKOMSEL SUMBAGUT">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'SEPAKAT TELKOMSEL SUMUT' }}</title>
+    <title>{{ $title ?? 'SEPAKAT TELKOMSEL SUMBAGUT' }}</title>
 
     <link rel="icon" href="{{ asset('images/logo-dpw-sepakat-sumbagut.jpeg') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
